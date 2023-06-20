@@ -1,0 +1,9 @@
+.idea/
+.pytest_cache
+__pycache__
+latest_logs
+archived_logs
+chromedriver
+test_00*/*.png
+screens
+test_local_android.py
