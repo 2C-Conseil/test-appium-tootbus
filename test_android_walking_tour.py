@@ -20,7 +20,7 @@ def test_android_walking_tour():
     options.udid = 'emulator-5554'
     options.app = "/Users/2cconseil/Desktop/tootbus_latest.apk"
 
-    driver = webdriver.Remote('http://localhost:4723/wd/hub', options=options)
+    driver = webdriver.Remote('http://192.168.1.59:4723', options=options)
 
     driver.implicitly_wait(12)
 
