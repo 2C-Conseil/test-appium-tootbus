@@ -1,4 +1,4 @@
-from .generic import first_stages_selector, wait_and_click, are_elements_displayed, is_element_displayed, get_rgb_by_coordinates
+from generic import first_stages_selector, wait_and_click, are_elements_displayed, is_element_displayed, get_rgb_by_coordinates
 from selenium.common import NoSuchElementException
 
 
