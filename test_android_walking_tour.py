@@ -9,14 +9,8 @@ def test_android_walking_tour():
     from appium.options.android import UiAutomator2Options
     from appium.webdriver.common.appiumby import AppiumBy
     from appium.webdriver.common.touch_action import TouchAction
-    from appium.webdriver.common.multi_action import MultiAction
-    import pathlib
     import time
-    import socket
-    from mitmproxy import http
     import logging
-    from datetime import datetime
-    import pytz
 
     logging.basicConfig(level=logging.INFO)
     logging.basicConfig(filename='android.log', level=logging.INFO)
