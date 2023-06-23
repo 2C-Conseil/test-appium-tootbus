@@ -1,5 +1,5 @@
 from selenium.common import NoSuchElementException
-from .generic import first_stages_selector, wait_and_click, are_elements_displayed, is_element_displayed
+from generic import first_stages_selector, wait_and_click, are_elements_displayed, is_element_displayed
 
 
 def test_android_display_bus():
@@ -22,9 +22,9 @@ def test_android_display_bus():
     options = UiAutomator2Options()
     options.platformVersion = '9'
     options.udid = 'emulator-5554'
-    options.app = "C:/Users/Elite/Desktop/tootbus_latest.apk"
+    options.app = "/Users/2cconseil/Desktop/tootbus_latest.apk"
 
-    driver = webdriver.Remote('http://localhost:4723/wd/hub', options=options)
+    driver = webdriver.Remote('http://192.168.1.59:4723', options=options)
 
     driver.implicitly_wait(12)
 
