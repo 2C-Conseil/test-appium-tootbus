@@ -9,11 +9,7 @@ def test_android_display_bus():
     from appium.options.android import UiAutomator2Options
     from appium.webdriver.common.appiumby import AppiumBy
     from appium.webdriver.common.touch_action import TouchAction
-    from appium.webdriver.common.multi_action import MultiAction
-    import pathlib
     import time
-    import socket
-    from mitmproxy import http
     import logging
 
     logging.basicConfig(level=logging.INFO)
