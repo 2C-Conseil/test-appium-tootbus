@@ -2,3 +2,4 @@ selenium
 pytest
 pytest-html
 appium-python-client
+firebase-admin

@@ -1,4 +1,4 @@
-from .generic import first_stages_selector, wait_and_click, are_elements_displayed, is_element_displayed, get_rgb_by_coordinates
+from generic import first_stages_selector, wait_and_click, are_elements_displayed, is_element_displayed, get_rgb_by_coordinates, get_firebase_value
 from selenium.common import NoSuchElementException
 
 
@@ -60,8 +60,10 @@ def test_android_display_routes():
         assert is_element_displayed(driver, (AppiumBy.XPATH, "//*[contains(@text, 'Inactive')]"))
         assert is_element_displayed(driver, (AppiumBy.ID, "com.ratpdev.esight.debug:id/tv_bus_state"))
 
+    route_name = get_firebase_value("Sight_Bus_Lines", "zenbus:Line:506360012:LOC", "Name")
+
     wait_and_click(driver, (AppiumBy.ID, 'com.ratpdev.esight.debug:id/image_maptype'))
-    wait_and_click(driver, (AppiumBy.XPATH, "//*[contains(@text, 'Blue Route')]"))
+    wait_and_click(driver, (AppiumBy.XPATH, f"//*[contains(@text, '{route_name}')]"))
 
     action = TouchAction(driver)
     action.tap(x=773, y=970, count=1).release().perform()
@@ -77,7 +79,7 @@ def test_android_display_routes():
 
     assert get_rgb_by_coordinates(driver, AppiumBy.XPATH, "//*[contains(@text, 'Blue Route')]", 50) == (102, 102, 102)
 
-    wait_and_click(driver, (AppiumBy.XPATH, "//*[contains(@text, 'Blue Route')]"))
+    wait_and_click(driver, (AppiumBy.XPATH, f"//*[contains(@text, '{route_name}')]"))
     time.sleep(2)
 
     assert get_rgb_by_coordinates(driver, AppiumBy.XPATH, "//*[contains(@text, 'Blue Route')]", 50) == (0, 141, 45)

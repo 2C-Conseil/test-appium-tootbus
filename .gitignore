@@ -7,3 +7,4 @@ chromedriver
 test_00*/*.png
 screens
 test_local_android.py
+firebase-private-key.json

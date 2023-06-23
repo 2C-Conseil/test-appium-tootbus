@@ -24,7 +24,7 @@ def test_android_walking_tour():
     options = UiAutomator2Options()
     options.platformVersion = '9'
     options.udid = 'emulator-5554'
-    options.app = "C:/Users/Elite/Desktop/tootbus_latest.apk"
+    options.app = "/Users/2cconseil/Desktop/tootbus_latest.apk"
 
     driver = webdriver.Remote('http://localhost:4723/wd/hub', options=options)
 

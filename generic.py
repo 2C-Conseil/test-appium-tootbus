@@ -130,3 +130,22 @@ def get_rgb_by_coordinates(driver, by, value, add_x=0, add_y=0):
     screenshot_image.save('screenshot_indicator.png')
 
     return red, green, blue
+
+
+def get_firebase_value(collection, document, key):
+    import firebase_admin
+    from firebase_admin import credentials, firestore
+    import os
+
+    cred = credentials.Certificate(os.path.join(os.path.dirname(__file__), "firebase-private-key.json"))
+    firebase_admin.initialize_app(cred)
+
+    db = firestore.client(app=firebase_admin.get_app())
+    doc_ref = db.collection(collection).document(document)
+
+    try:
+        doc = doc_ref.get()
+        return doc.to_dict().get(key)
+    except Exception:
+        print('No such document!')
+        assert False
